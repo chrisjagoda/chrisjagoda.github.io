@@ -1,0 +1,53 @@
+<div ng-controller="MyCoursesCtrl">
+    <h3>{{profile.username}}'s Course List</h3>
+    </br>
+    <div class="btn-group btn-group-search">
+        <input type="text" class="form-control" ng-model="searchString" placeholder="Search your Courses" id="searchBox"/>
+        <button class="btn btn-default dropdown-toggle search-bar" type="button" id="providerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{selectedStatus}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="providerDropdown">
+            <li ng-repeat="status in courseStatus">
+                <a ng-click="sortStatus(status)">{{status.status}}</a>
+            </li>
+        </ul>        
+    </div>
+    </br>
+    <div class="list-group">
+        <div ng-repeat="course in model | courseFilter:courses | searchFor:searchString | sortStatus:this">
+            <div class="col-sm-12 list-group-item">
+                <h3>{{course.course}}</br><span class="pull-right">{{course.provider}}</span></h3>
+                <div class="img-wrap col-sm-6">
+                    <img class="course-img" ng-src="{{course.image}}" err-src="images/default.jpg"/>
+                </div>
+            	<div class="col-sm-6">
+                	<div class="btn-group btn-group-course">
+                        <a href="{{course.url}}" class="btn btn-course btn-primary">Go to Course</a>
+                        <button ng-show="authenticated" ng-click="removeCourse(course)" class="btn btn-course btn-primary">Remove Course
+                        </button>
+    				</div>
+    				<div>
+    				    <div class="btn-group btn-group-course">
+    				    	<button class="btn btn-course">Status: </button>
+    				    	<button id="courseid{{course.mycourseid}}" class="btn btn-default btn-status" ng-model="course.status.status">{{course.status.status}}
+                            </button>
+                            <button class="btn btn-default dropdown-toggle" type="button" id="statusDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    			    			<span class="caret"></span>
+    			    		</button>
+    			    		<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="statusDropdown">
+    			    			<li ng-repeat="status in courseStatus">
+    			    				<a ng-click="setStatus(course, status.id)">{{status.status}}</a>
+    		    				</li>
+    			    		</ul>
+    				    </div>
+    			    </div>
+                    <div class="alert-course">
+                        <div ng-if="course.removed == true" class="alert alert-success">Course Removed.</div>
+                        <div ng-if="course.updated == true" class="alert alert-success">Course Status Updated.</div>
+                    </div>
+                </div>
+                <div class="col-sm-12" ng-bind-html="course.description"></div>
+        	</div>
+        </div>
+    </div>
+</div>

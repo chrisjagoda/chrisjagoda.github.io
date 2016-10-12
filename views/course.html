@@ -1,0 +1,62 @@
+<div ng-controller="CourseCtrl">
+    <h3>List of MOOCs (Massive Open Online Courses) offered by the best Online Course Providers</h3>
+    </br>
+    <div class="btn-group btn-group-search">
+        <input type="text" class="form-control" ng-model="searchString" ng-change="changeData(searchString)" placeholder="Search for courses" id="searchBox"/>
+        <button class="btn btn-default dropdown-toggle search-bar" type="button" id="providerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{selectedProvider}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="providerDropdown">
+            <li ng-repeat="provider in providers">
+                <a ng-click="setProvider(provider)">{{provider.id}}</a>
+            </li>
+        </ul>
+    </div>
+    </br>
+    <div class="list-group">
+        <div ng-repeat="course in courses | searchFor:searchString | sortProvider:this">
+            <div class="col-sm-12 list-group-item">
+                <h3>{{course.course}}<p class="pull-right">{{course.provider}}</p></h3>
+                <div class="img-wrap col-sm-6">
+                    <img class="course-img" ng-src="{{course.image}}" err-src="images/default.jpg"/>
+                </div>
+                <div class="col-sm-6">
+                    <div class="btn-group-course">
+                        <a ng-hide="authenticated" href="{{course.url}}" class="btn btn-course btn-primary">
+                        Go to Course</a>
+                        <div class="btn-group" ng-show="authenticated">                        
+                            <button ng-click="addCourse(course)" class="btn btn-course btn-primary">
+                            Add Course
+                            </button>
+                            <a href="{{course.url}}" class="btn btn-course btn-primary">Go to Course</a>
+                        </div>
+                    </div>
+                    <div class="alert-course">
+                        <div ng-if="course.added == true" class="alert alert-success">Course Added.</div>
+                        <div ng-if="course.added == false" class="alert alert-danger">Course Already Added.</div>
+                    </div>
+                </div>                
+                <div class="col-sm-12" ng-bind-html="course.description"></div>
+            </div>
+        </div>
+        <div class="center-block" ng-hide="searching">
+            <ul ng-if="pager.pages.length" class="pagination">
+                <li ng-class="{disabled:pager.currentPage === 1}">
+                    <a ng-click="setPage(1)">First</a>
+                </li>
+                <li ng-class="{disabled:pager.currentPage === 1}">
+                    <a ng-click="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                    <a ng-click="setPage(page)">{{page}}</a>
+                </li>               
+                <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                    <a ng-click="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                    <a ng-click="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@
             </div>
             <div class="alert alert-danger" ng-repeat="error in errors.email">{{error}}</div>
             <button type="submit" ng-show="authenticated" class="btn btn-primary">Update Profile</button>
-            <a href="#/passwordChange"><button class="btn btn-primary" href="#/passwordChange">Change Password</button></a>
+            <a href="/passwordChange"><button class="btn btn-primary">Change Password</button></a>
         </form>
         <div class="alert alert-warning" ng-if="authenticated == false">You need to be logged in to do this.</div>
     </div>

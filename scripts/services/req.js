@@ -1,14 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .service('req', function req($location, $q, $http, $cookies, $rootScope) {
+  .service('req', function req($q, $http, $cookies, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    // var forceSSL = function () {
-    //     if ($location.protocol() !== 'https') {
-    //         $window.location.href = $location.absUrl().replace('http', 'https');
-    //     }
-    // };
-    //forceSSL();
     var service = {
         /* START CUSTOMIZATION HERE */
         // Change this to point to your Django REST Auth API
@@ -41,7 +35,7 @@ angular.module('angularDjangoRegistrationAuthApp')
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
                 console.log("error syncing with: " + url);
-                //console.log(data);
+                console.log(data);
                 // Set request status
                 if(data){
                     status = data.status;

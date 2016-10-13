@@ -35,10 +35,10 @@ angular.module('angularDjangoRegistrationAuthApp')
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
                 console.log("error syncing with: " + url);
-                console.log(data);
+                //console.log(data);
                 // Set request status
                 if(data){
-                    data.status = status;
+                    status = data.status;
                 }
                 if(status == 0){
                     if(data == ""){

@@ -115,8 +115,8 @@ angular.module('angularDjangoRegistrationAuthApp', [
          $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://thorgatron.tech/**']);
      }])
   .run(function(djangoAuth){
-    djangoAuth.initialize('thorgatron.tech/api/rest-auth', false);
+    djangoAuth.initialize('http://thorgatron.tech/api/rest-auth', false);
   })
   .run(function(req){
-    req.initialize('thorgatron.tech/api', false);
+    req.initialize('http://thorgatron.tech/api', false);
   });

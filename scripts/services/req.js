@@ -28,7 +28,6 @@ angular.module('angularDjangoRegistrationAuthApp')
                 method = args.method || "GET",
                 params = params,
                 data = args.data || {};
-            console.log(url);
             // Fire the request, as configured.
             $http({
                 url: url,
@@ -45,7 +44,7 @@ angular.module('angularDjangoRegistrationAuthApp')
                 //console.log(data);
                 // Set request status
                 if(data){
-                    data.status = status;
+                    status = data.status;
                 }
                 if(status == 0){
                     if(data == ""){

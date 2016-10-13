@@ -105,18 +105,21 @@ img {
   font-style: normal;
 }
 
-.btn-course {
+.btn-primary {  
   color: #fff;
   background-color: #618A9D;
   border-color: #567C8F;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #567C8F;
+  border-color: #537687;
+}
+
+.btn-course {
   width: 125px;
   padding-left: 0px;  
   padding-right: 0px;
-}
-
-.btn-course:hover, .btn-course:focus {
-  background-color: #567C8F;
-  border-color: #537687;
 }
 
 .btn-status {

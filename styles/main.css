@@ -130,9 +130,13 @@ img {
   width: 25px;
 }
 
-.col-centered{
-    float: none;
-    margin: 0 auto;
+.out-centered{
+  width: 100%;
+  text-align: center;
+}
+
+.in-centered{  
+  display: inline-block;
 }
 
 .navbar-default {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .service('req', function req($q, $http, $cookies, $rootScope) {
+  .service('req', function req($location, $q, $http, $cookies, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var forceSSL = function () {
         if ($location.protocol() !== 'https') {

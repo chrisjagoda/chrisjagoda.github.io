@@ -112,11 +112,11 @@ angular.module('angularDjangoRegistrationAuthApp', [
       });
   })
   .config(['$sceDelegateProvider', function($sceDelegateProvider) {
-         $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://127.0.0.1:61742/**']);
+         $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://thorgatron.tech/**']);
      }])
   .run(function(djangoAuth){
-    djangoAuth.initialize('//127.0.0.1:61742/api/rest-auth', false);
+    djangoAuth.initialize('thorgatron.tech/api/rest-auth', false);
   })
   .run(function(req){
-    req.initialize('//127.0.0.1:61742/api', false);
+    req.initialize('thorgatron.tech/api', false);
   });

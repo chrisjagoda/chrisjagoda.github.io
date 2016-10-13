@@ -40,10 +40,10 @@ angular.module('angularDjangoRegistrationAuthApp')
                 deferred.resolve(data, status);
             }))
             .error(angular.bind(this,function(data, status, headers, config) {
-                console.log("error syncing with: " + url);
+                // console.log("error syncing with: " + url);
                 // Set request status
                 if(data){
-                    console.log(data, "Status: ", data.status)
+                    console.log("Status: ", data.status)
                     status = data.status;
                 }
                 if(status == 0){

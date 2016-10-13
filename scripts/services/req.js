@@ -3,12 +3,12 @@
 angular.module('angularDjangoRegistrationAuthApp')
   .service('req', function req($location, $q, $http, $cookies, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var forceSSL = function () {
-        if ($location.protocol() !== 'https') {
-            $window.location.href = $location.absUrl().replace('http', 'https');
-        }
-    };
-    forceSSL();
+    // var forceSSL = function () {
+    //     if ($location.protocol() !== 'https') {
+    //         $window.location.href = $location.absUrl().replace('http', 'https');
+    //     }
+    // };
+    // forceSSL();
     var service = {
         /* START CUSTOMIZATION HERE */
         // Change this to point to your Django REST Auth API

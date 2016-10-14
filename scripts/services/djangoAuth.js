@@ -96,14 +96,13 @@ angular.module('angularDjangoRegistrationAuthApp')
                 }
             });
         },
-        'register': function(username,password1,password2,email,more){
+        'register': function(username,password1,password2,email){
             var data = {
                 'username':username,
                 'password1':password1,
                 'password2':password2,
                 'email':email
             }
-            data = angular.extend(data,more);
             return this.request({
                 'method': "POST",
                 'url': "/registration/",

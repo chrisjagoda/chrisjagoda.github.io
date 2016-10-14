@@ -8,6 +8,7 @@ angular.module('angularDjangoRegistrationAuthApp')
       $scope.errors = [];
       Validate.form_validation(formData,$scope.errors);
       if(!formData.$invalid){
+        console.log(formData);
         djangoAuth.register($scope.model.username,$scope.model.password1,$scope.model.password2,$scope.model.email)
         .then(function(data){
         	// success case

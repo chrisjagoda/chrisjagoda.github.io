@@ -23,28 +23,17 @@ function genCells(cell_size_x, cell_size_y, canvas_width, canvas_height, frequen
     }
     return cells;
 }
-document.getElementById("start").addEventListener("click", e => createNewGame());
-document.getElementById("red").addEventListener("change", e => toggleColor("red"));
-document.getElementById("green").addEventListener("change", e => toggleColor("green"));
-document.getElementById("blue").addEventListener("change", e => toggleColor("blue"));
-document.getElementById("evolve").addEventListener("click", e => toggleEvolve());
-var cell_width = 3;
-var cell_height = 3;
+var cell_width = 4;
+var cell_height = 4;
 var canvas_width = null;
-var canvas_height = 250;
+var canvas_height = 300;
 var frequency = 0.1;
-var colors = { red: true, green: true, blue: true };
+var colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
 var cells;
 var game;
 function createNewGame() {
     cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
     game = new gameOfLife_1.GameOfLife(cells, cell_width, cell_height, "life", colors);
     game.interval = setInterval(function () { game.step(); }, 100);
-}
-function toggleColor(color) {
-    colors[color] = !colors[color];
-}
-function toggleEvolve() {
-    game.evolved = !game.evolved;
 }
 createNewGame();

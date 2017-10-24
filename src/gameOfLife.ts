@@ -147,7 +147,7 @@ export class GameOfLife {
 					child_color = parent_colors[Math.floor(Math.random()*parent_colors.length)];
 				}
 				// create new cell based on color from neighbors dead cell color null
-				let cell_color: RGB = (is_alive) ? child_color: null;
+				let cell_color: RGB = (is_alive) ? child_color: cell.color;
 				next_gen[y].push(<Cell>{x_pos: x, y_pos: y, alive: is_alive, color: cell_color});
 			}
 		}
@@ -226,6 +226,10 @@ class GameDisplay {
 			this.ctx.fillRect(start_x, start_y, this.cell_width, this.cell_height);
 		} else {
 			this.ctx.clearRect(start_x, start_y, this.cell_width, this.cell_height);
+			if (cell.color) {
+				this.ctx.fillStyle = "rgba(" + cell.color.r + "," + cell.color.g + "," + cell.color.b + "," + 0.1 + ")";
+				this.ctx.fillRect(start_x, start_y, this.cell_width, this.cell_height);
+			}
 		}
 	}
 }

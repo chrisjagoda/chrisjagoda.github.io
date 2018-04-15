@@ -24,20 +24,46 @@ function genCells(cell_size_x, cell_size_y, canvas_width, canvas_height, frequen
     }
     return cells;
 }
+var canvas = document.getElementById("life");
 var cell_width = 4;
 var cell_height = 4;
-var canvas_width = null;
-var canvas_height = 300;
+var canvas_width = canvas.clientWidth;
+var canvas_height = canvas.clientHeight;
 var frequency = 0.1;
 var colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
 var cells;
 var game;
+var started = false;
 function createNewGame() {
     cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
     game = new gameOfLife_1.GameOfLife(cells, cell_width, cell_height, "life", colors);
+}
+function startGame() {
     game.interval = setInterval(function () { game.step(); }, 100);
+    started = true;
+}
+function stopGame() {
+    clearInterval(game.interval);
+    game.interval = 0;
+    started = false;
+}
+function resetGame() {
+    stopGame();
+    canvas_height = canvas.clientHeight;
+    canvas_width = canvas.clientWidth;
+    colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
+    createNewGame();
 }
 createNewGame();
+canvas.addEventListener("click", function () {
+    if (!started)
+        startGame();
+    else
+        stopGame();
+});
+canvas.addEventListener("dblclick", function () {
+    resetGame();
+});
 
 },{"./gameOfLife":2}],2:[function(require,module,exports){
 "use strict";
@@ -166,11 +192,11 @@ class GameOfLife {
                 var parent_colors;
                 var child_color;
                 if (is_alive) {
-                    if (cell.color) {
+                    if (cell.color) { // if colors exist - create child color from two random neighbors - or parents
                         neighbor_colors.push(cell.color);
                     }
                     parent_colors = neighbor_colors.splice(Math.floor(Math.random() * neighbor_colors.length), 1);
-                    if (neighbor_colors.length > 0) {
+                    if (neighbor_colors.length > 0) { // fix for evolved - allows single parent color
                         parent_colors.push(neighbor_colors[Math.floor(Math.random() * neighbor_colors.length)]);
                     }
                     child_color = parent_colors[Math.floor(Math.random() * parent_colors.length)];

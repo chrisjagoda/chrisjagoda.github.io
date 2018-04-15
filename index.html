@@ -1,23 +1,93 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="https://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <title>Christopher Jagoda - Software Developer</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.min.js"></script>
+    <title>Chris Jagoda</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Share+Tech+Mono" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 </head>
 <body>
-    <a href="https://github.com/chrisjagoda/GameOfLife-Colors"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
-
-    <div class="game-container">
-        <canvas id="life"></canvas>
-    </div>
-
-    <script>
-        require(["bundle"], function(app) {
-        });
-    </script>
-
+    <header>
+        <div class="lg-col title">
+            <h1>Chris Jagoda</h1>
+        </div>
+        <div class="sm-col contact">
+            <div>
+                <a href="https://github.com/chrisjagoda" target="_blank"><img src="images/github3.png" height="16px" width="16px"><span>github.com/chrisjagoda</span></a>
+                <a href="mailto:chrisjagoda@live.com"><img src="images/email2.png" height="16px" width="16px"><span>chrisjagoda@live.com</span></a>
+                <a href="resume.pdf" target="_blank"><img src="images/resume3.png" height="16px" width="16px"><span>resume</span></a>
+            </div>
+        </div>
+    </header>
+    <section id="scrollArea">
+        <nav>
+            <div>
+                <div>&middot;</div>
+                <div>student</div>
+                <div>&middot;</div>
+                <div>tech hobbyist</div>
+                <div>&middot;</div>
+                <div>freelance web/software developer</div>
+                <div>&middot;</div>
+            </div>
+            <a class="selected" id="educationSelector" onclick="scrollToEducation()">
+                Education
+            </a>
+            <a id="workSelector" onclick="scrollToWork()">
+                Work History
+            </a>
+            <a id="projectsSelector" onclick="scrollToProjects()">
+                Projects
+            </a>
+            <div class="selector-box" id="selector">&#8203;</div>
+        </nav>
+        <main>
+            <article id="education">
+                <h1>Education</h1>
+                <h4 style="margin-bottom: 0">Montclair State University</h4><span class="pull-right">May 2018</span>
+                <p>
+                    B.S. Computer Science
+                </p>
+                <svg src="images/right-arrow.svg" height="16px" width="16px" alt="right arrow"/>
+            </article>
+            <article id="work">
+                <h1>Work History</h1>
+                <h4>Advanced System Concepts</h4><span class="pull-right">May 2017 - September 2017</span>
+                <p>
+                    <div>​Worked within a scrum team developing an in-house software tool to improve communication and productivity among developers by providing an interface to dynamically monitor and report information.</div>
+                    <div>Developed frontend architecture utilizing latest technologies and development practices.</div>
+                    <div>Created REST endpoints and stored procedures to store and retrieve data, as well as working with various windows services and APIs.</div>
+                </p>
+                <h4>Freelance Web Development</h4><span class="pull-right">2014 - Present</span>
+                <p>
+                    <div>Freelance web development including designing, maintaining, and monitoring websites/applications.</div>
+                    <div>Worked with several content management systems designing, creating, and connecting databases to websites as well as database administration.</div>
+                </p>
+            </article>
+            <article id="projects">
+                <h1>Projects</h1>
+                <h4>Saved To Bookmark for Reddit</h4>
+                <p>
+                    A chrome extension for converting a user's saved posts on reddit to bookmarks in chrome. Logs in through reddit’s API and requests a user’s saved posts which may then be selected and converted to bookmarks for the chrome web browser.
+                </p>
+                <h4>Mesh Network Messaging App</h4>
+                <p>                        
+                    A distributed mesh-network android messaging application built using the Nearby API provided by Google for Android. Creates a distributed network of users able to communicate with eachother using peer-to-peer wifi and blutooth.
+                </p>
+                <h4>Conway's Game of Life</h4>
+                <div>
+                    <canvas id="life"></canvas>
+                </div>
+            </article>
+        
+            <script>
+                require(["bundle"], function(app) {
+                });
+            </script>
+        </main>
+    </section>
+    <script src="index.js"></script>
 </body>
 </html>

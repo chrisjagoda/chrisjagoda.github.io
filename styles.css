@@ -1,8 +1,185 @@
+/* Element declarations */
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
 }
 
-.game-container {
-	text-align: center;
+header {
+    position: fixed;
+    height: 80px;
+    /* box-shadow: 0 1px 1px grey; */
+    z-index: 1;
+    background-color: #4dd0e1;
+    color: white;
+    font-family: "Share Tech Mono";
+}
+
+nav {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    box-shadow: 1px 0px 1px #c0c0cc;
+    resize: horizontal;
+    overflow: auto;
+    z-index: 1;
+}
+
+main {
+    left: 250px;
+    position: absolute;
+    background-color: rgb(250, 250, 255);
+}
+
+section {
+    position:absolute;
+    top: 80px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow-y: auto;
+    z-index: 0;
+    font-family: "IBM Plex Sans";
+}
+
+article {
+    padding: 0.5em 1.5em;
+    margin: 1em;
+    background-color: white;
+    box-shadow: 0 1px 14px #c0c0cc3b;
+}
+
+header,
+section {
+    display: inline-flex;
+    width: 100%;
+}
+
+header,
+nav,
+main {    
+    transition: 0.1s ease-out;
+}
+
+/* Layout formatting */
+.sm-col {
+    flex: 33%;
+}
+
+.lg-col {
+    flex: 67%;
+}
+
+.pull-right {
+    float: right;
+}
+
+/* Header */
+div.title,
+div.contact {
+    margin: auto 1.5em;
+}
+
+div.title > h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+div.contact > div {
+    float: right;
+}
+
+div.contact > div > a {
+    display: block;
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+}
+
+div.contact > div > a:visited {
+    color: white;
+}
+
+div.contact > div > a > img {
+    position: absolute;
+    margin-top: 3px;
+    width: 13px;
+    height: 13px;
+}
+
+div.contact > div > a > span {
+    margin-left: 20px;
+}
+
+/* Side bar */
+nav > a,
+nav > .selector-box {
+    padding: 1em 1.5em;
+}
+
+nav > div {
+    padding: 2em 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+nav > a {
+    font-weight: bold;
+    position: relative;
+    display: block;
+    color: black;
+    z-index: 2;
+}
+
+nav > a:hover {
+    cursor: pointer;
+}
+
+nav > .selector-box {
+    width: 100%;
+    position: absolute;
+    background-color: #fbfbfb;
+    /* box-shadow: 0 1px 1px #c0c0cc; */
+    margin-top: -162px;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+}
+
+.selected {
+    /* font-weight: normal; */
+    /* transition: all 0.3s ease-out; */
+}
+
+/* Main */
+article > h4 {
+    display: inline-block;
+}
+
+article > h4,
+article > span {
+    margin: 10px 0;
+}
+
+/* Media queries */
+@media(max-width: 800px) {
+    .pull-right {
+        float: none;
+        display: block;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        height: 88px;
+    }
+
+    section {
+        top: 88px;
+    }
+
+    nav {
+        width: 180px;
+    }
+
+    main {
+        left: 180px;
+    }
 }

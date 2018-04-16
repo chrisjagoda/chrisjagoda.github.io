@@ -173,7 +173,7 @@ article > span {
 
 @media(max-width: 600px) {
     div.title, div.contact {
-        margin: auto 1em;
+        margin: auto .7em;
     }
 
     nav {        
@@ -189,14 +189,11 @@ article > span {
 
     nav > a {
         display: inline-block;
-        padding: 1em;
-    }
-
-    section {
-        top: 142px;
+        padding: 1em .75em;
     }
 
     main {
+        top: 142px;
         left: 0;
     }
 

@@ -195,4 +195,9 @@ article > span {
     main {
         left: 0;
     }
+
+    article {
+        padding: 0.25em 1em;
+        margin: .5em;
+    }
 }

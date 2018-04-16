@@ -1,4 +1,3 @@
-
 /**
  * The Game of Life object
  * @param {number[][]} init_cells the initial array of cells
@@ -14,19 +13,17 @@ export class GameOfLife {
 	cell_height: number;
 	canvas_id: string;
 	colors: Colors;
-	evolved: boolean;
 	cell_array: Cell[][];
 	display: GameDisplay;
 	interval: number;
 
-	constructor(init_cells: number[][], cell_width?: number, cell_height?: number, canvas_id?: string, colors?: Colors, evolved?: boolean) {
+	constructor(init_cells: number[][], cell_width?: number, cell_height?: number, canvas_id?: string, colors?: Colors) {
 		this.num_cells_y = init_cells.length;
 		this.num_cells_x = init_cells[0].length || 0;
 		this.cell_width = cell_width || 5;
 		this.cell_height = cell_height || 5;
 		this.canvas_id = canvas_id || "life";
 		this.colors = colors || <Colors>{red: true, green: true, blue: true};
-		this.evolved = evolved || false;
 		this.cell_array = [];
 		this.display = new GameDisplay(this.num_cells_x, this.num_cells_y, cell_width, cell_height, canvas_id);
 		this.interval = null; // initial interval to null. Set when setInterval called on step
@@ -102,34 +99,17 @@ export class GameOfLife {
 					}
 				});
 
-				// variant alg with evolved set to true
 				let is_alive: boolean = cell.alive;
 				if (cell.alive) {
 					if (alive_count < 2 || alive_count > 3) {
 						// new state: dead, overpopulation/underpopulation
-						if (this.evolved) {
-							cell.alive = false;
-						}
 						is_alive = false;
 					} else if (alive_count === 2 || alive_count === 3) {
-						// lives on to next generation
-						if (this.evolved) {
-							cell.alive = true;
-							if (!cell.color) {
-								cell.color = neighbor_colors[Math.floor(Math.random()*neighbor_colors.length)];;
-							}
-						}
 						is_alive = true;
 					}
 				} else {
 					if (alive_count === 3) {
 						// new state: live, reproduction
-						if (this.evolved) {
-							cell.alive = true;
-							if (!cell.color) {
-								cell.color = neighbor_colors[Math.floor(Math.random()*neighbor_colors.length)];;
-							}
-						}
 						is_alive = true;
 					}
 				}
@@ -141,9 +121,6 @@ export class GameOfLife {
 						neighbor_colors.push(cell.color);
 					}
 					parent_colors = neighbor_colors.splice(Math.floor(Math.random()*neighbor_colors.length), 1);
-					if (neighbor_colors.length > 0) { // fix for evolved - allows single parent color
-						parent_colors.push(neighbor_colors[Math.floor(Math.random()*neighbor_colors.length)]);
-					}
 					child_color = parent_colors[Math.floor(Math.random()*parent_colors.length)];
 				}
 				// create new cell based on color from neighbors dead cell color null

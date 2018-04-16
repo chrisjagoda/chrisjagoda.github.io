@@ -113,6 +113,7 @@ div.contact > div > a > span {
 /* Side bar */
 nav > a {
     padding: 1em 1.5em;
+    height: -webkit-fill-available;
 }
 
 nav > div {

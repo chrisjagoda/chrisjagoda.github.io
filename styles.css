@@ -17,6 +17,7 @@ nav {
     width: 250px;
     height: 100%;
     position: fixed;
+    background-color: white;
     box-shadow: 1px 0px 1px #c0c0cc;
     resize: horizontal;
     overflow: auto;

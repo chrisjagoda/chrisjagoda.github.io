@@ -28,15 +28,12 @@ function select(target) {
         selected = target;
         if (target == "education") {
             educationSelector.classList.add("selected");
-            selector.style.marginTop = "-162px";
         }
         else if (target == "work") {
             workSelector.classList.add("selected");
-            selector.style.marginTop = "-108px";
         }
         else {
             projectsSelector.classList.add("selected");
-            selector.style.marginTop = "-54px";
         }
     }
 }

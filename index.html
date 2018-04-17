@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600|Share+Tech+Mono" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 </head>
@@ -30,7 +30,7 @@
                 <div>&middot;</div>
                 <div>tech hobbyist</div>
                 <div>&middot;</div>
-                <div>freelance web/software developer</div>
+                <div>web/software developer</div>
                 <div>&middot;</div>
             </div>
             <a class="selected" id="educationSelector" onclick="scrollToEducation()">
@@ -71,17 +71,31 @@
             <article id="projects">
                 <h1>Projects</h1>
                 <h4>Saved To Bookmark for Reddit</h4>
+                <div class="subtitle">
+                    Python, Javascript, Bootstrap, Flask, AWS
+                </div>
                 <p>
                     A chrome extension for converting a user's saved posts on reddit to bookmarks in chrome. Logs in through reddit’s API and requests a user’s saved posts which may then be selected and converted to bookmarks for the chrome web browser.
                 </p>
                 <h4>Mesh Network Messaging App</h4>
+                <div class="subtitle">                    
+                    Java, Android
+                </div>
                 <p>                        
                     A distributed mesh-network android messaging application built using the Nearby API provided by Google for Android. Creates a distributed network of users able to communicate with eachother using peer-to-peer wifi and blutooth.
                 </p>
-                <h4>Conway's Game of Life</h4>
-                <div>
-                    <canvas id="life"></canvas>
+                <h4>Crypto Spreadsheet Sync</h4>
+                <div class="subtitle">                    
+                    Python, Google Cloud Platform
                 </div>
+                <p>                        
+                    A command line utility for retrieving up to date cryptocurrency prices and information from an online cryptocurrency market price aggregator, and writing that to a google sheet with the Google Sheets API.
+                </p>
+                <h4>Conway's Game of Life</h4>
+                <div class="subtitle">Tap to start &amp; stop, double tap to reset</div>
+                <p>
+                    <canvas id="life"></canvas>
+                </p>
             </article>
         
             <script>

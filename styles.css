@@ -3,13 +3,20 @@ body {
     margin: 0;
 }
 
+h1, h2 {
+    font-weight: 600;
+}
+
+h3, h4 {
+    font-weight: 500;
+}
+
 header {
     position: fixed;
     height: 80px;
-    /* box-shadow: 0 1px 1px grey; */
     z-index: 1;
     background-color: #4dd0e1;
-    color: white;
+    color: rgb(250, 250, 255);
     font-family: "Share Tech Mono";
 }
 
@@ -113,17 +120,16 @@ div.contact > div > a > span {
 /* Side bar */
 nav > a {
     padding: 1em 1.5em;
-    height: -webkit-fill-available;
 }
 
 nav > div {
     padding: 2em 1.5em;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 nav > a {
-    font-weight: bold;
+    font-weight: 500;
     position: relative;
     display: block;
     color: black;
@@ -135,8 +141,7 @@ nav > a:hover {
 }
 
 .selected {
-    background-color: #fbfbfb;
-    /* transition: all 0.3s ease-out; */
+    background-color: rgb(250, 250, 255);
 }
 
 /* Main */
@@ -147,6 +152,10 @@ article > h4 {
 article > h4,
 article > span {
     margin: 10px 0;
+}
+
+article > div.subtitle {
+    font-style: italic;
 }
 
 /* Media queries */
@@ -174,8 +183,37 @@ article > span {
 }
 
 @media(max-width: 600px) {
+    .sm-col {
+        flex: 40%;
+    }
+    
+    .lg-col {
+        flex: 60%;
+    }
+
     div.title, div.contact {
         margin: auto .7em;
+    }
+
+    div.contact > div {
+        display: inline-block;
+    }
+
+    div.contact > div > a {
+        display: inline-flex;
+    }
+
+    div.contact > div > a > img {
+        position: inherit;
+        margin-top: 10px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+    }
+
+    div.contact > div > a > span {
+        visibility: hidden;
+        width: 0;
     }
 
     nav {        
@@ -191,6 +229,7 @@ article > span {
 
     nav > a {
         display: inline-block;
+        height: -webkit-fill-available;
         padding: 1em .75em;
     }
 

@@ -89,6 +89,7 @@ div.contact {
 div.title > h1 {
     margin: 0;
     font-size: 34px;
+    min-width: 222px;
 }
 
 div.contact > div {
@@ -184,11 +185,11 @@ article > div.subtitle {
 
 @media(max-width: 600px) {
     .sm-col {
-        flex: 40%;
+        flex: 5%;
     }
     
     .lg-col {
-        flex: 60%;
+        flex: 95%;
     }
 
     div.title, div.contact {
@@ -199,21 +200,19 @@ article > div.subtitle {
         display: inline-block;
     }
 
-    div.contact > div > a {
-        display: inline-flex;
+    div.contact > div > a {        
+        margin: 0 1.5em .5em 1.5em;
     }
 
-    div.contact > div > a > img {
-        position: inherit;
-        margin-top: 10px;
-        display: inline-block;
+    div.contact > div > a > img {    
+        display: flex;
+        flex-direction: column;
         width: 20px;
         height: 20px;
     }
 
     div.contact > div > a > span {
-        visibility: hidden;
-        width: 0;
+        display: none;
     }
 
     nav {        
@@ -233,8 +232,11 @@ article > div.subtitle {
         padding: 1em .75em;
     }
 
+    section {
+        top: 142px;
+    }
+
     main {
-        top: 54px;
         left: 0;
     }
 

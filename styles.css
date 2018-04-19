@@ -143,6 +143,8 @@ nav > a:hover {
 
 .selected {
     background-color: #ccff903f;
+    color: #6200ea;
+    transition: 0.3s all;
 }
 
 /* Main */

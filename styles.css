@@ -1,3 +1,10 @@
+/* Colors */
+article > h1,
+nav > a:hover,
+.selected {
+    color: #6200ea;
+}
+
 /* Element declarations */
 body {
     margin: 0;
@@ -15,8 +22,8 @@ header {
     position: fixed;
     height: 68px;
     z-index: 1;
-    background-color: #6200ea;
     color: rgb(250, 250, 255);
+    background-color: #6200ea;
 }
 
 nav {
@@ -133,23 +140,11 @@ nav > a {
     position: relative;
     display: block;
     color: black;
+    transition: 0.3s all;
 }
 
 nav > a:hover {
     cursor: pointer;
-    color: #6200ea;
-    transition: 0.3s all;
-}
-
-.selected {
-    background-color: #ccff903f;
-    color: #6200ea;
-    transition: 0.3s all;
-}
-
-/* Main */
-article > h1 {    
-    color: #6200ea;
 }
 
 article > h4 {
@@ -199,11 +194,11 @@ article > div.subtitle {
     }
 
     .sm-col {
-        flex: 25%;
+        flex: 40%;
     }
     
     .lg-col {
-        flex: 75%;
+        flex: 60%;
     }
 
     div.title, div.contact {
@@ -218,7 +213,7 @@ article > div.subtitle {
         display: inline-block;
         width: 20px;
         height: 20px;
-        margin: 0;
+        margin: 0 0 0 .5em;
     }
 
     div.contact > div > a > img {    
@@ -237,6 +232,7 @@ article > div.subtitle {
         height: 42px;
         top: 56px;
         text-align: center;
+        display: inline-flex;
     }
 
     nav > .about {
@@ -247,6 +243,7 @@ article > div.subtitle {
         display: inline-block;
         height: -webkit-fill-available;
         padding: .66em .75em;
+        flex: 1;
     }
 
     section {

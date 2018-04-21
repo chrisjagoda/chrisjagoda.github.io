@@ -2,7 +2,7 @@
 article > h1,
 nav > a:hover,
 .selected {
-    color: #6200ea;
+    color: #777777;
 }
 
 /* Element declarations */
@@ -22,8 +22,8 @@ header {
     position: fixed;
     height: 68px;
     z-index: 1;
-    color: rgb(250, 250, 255);
-    background-color: #6200ea;
+    background-color: white;
+    box-shadow: 0px 1px 10px #c0c0cc3b;
 }
 
 nav {
@@ -31,7 +31,6 @@ nav {
     height: 100%;
     position: fixed;
     background-color: white;
-    box-shadow: 1px 0px 1px #c0c0cc;
     resize: horizontal;
     overflow: auto;
     z-index: 1;
@@ -40,7 +39,6 @@ nav {
 main {
     left: 250px;
     position: absolute;
-    background-color: rgb(250, 250, 255);
 }
 
 section {
@@ -107,12 +105,12 @@ div.contact > div {
 div.contact > div > a {
     display: block;
     width: fit-content;
-    color: white;
     text-decoration: none;
+    color: black;
 }
 
 div.contact > div > a:visited {
-    color: white;
+    color: black;
 }
 
 div.contact > div > a > img {
@@ -147,6 +145,12 @@ nav > a:hover {
     cursor: pointer;
 }
 
+nav > a:hover,
+.selected {
+    padding-left: 28px;
+}
+
+/* Main */
 article > h4 {
     display: inline-block;
 }
@@ -184,9 +188,15 @@ article > div.subtitle {
     }
 }
 
-@media(max-width: 600px) {    
+@media(max-width: 600px) {
+    nav > a:hover,
+    .selected {
+        padding: .75em;
+    }
+    
     header {
         height: 56px;
+        box-shadow: 0 0 0 #c0c0cc3b;
     }
 
     section {
@@ -213,7 +223,11 @@ article > div.subtitle {
         display: inline-block;
         width: 20px;
         height: 20px;
-        margin: 0 0 0 .5em;
+        margin: 0 0 0 .25em;
+    }
+
+    div.contact > div > a:first-child {
+        margin: 0;
     }
 
     div.contact > div > a > img {    
@@ -233,6 +247,7 @@ article > div.subtitle {
         top: 56px;
         text-align: center;
         display: inline-flex;
+        box-shadow: 0px 1px 10px #c0c0cc3b;
     }
 
     nav > .about {
@@ -240,7 +255,6 @@ article > div.subtitle {
     }
 
     nav > a {
-        display: inline-block;
         height: -webkit-fill-available;
         padding: .66em .75em;
         flex: 1;

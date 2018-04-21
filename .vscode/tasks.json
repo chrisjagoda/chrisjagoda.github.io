@@ -4,13 +4,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "npm",
-            "script": "all",
-            "problemMatcher": []
-        },
-        {
             "label": "http-server",
-            "command": "node_modules/http-server/bin/http-server"
-        },
+            "type": "shell",
+            "command": "node_modules/http-server/bin/http-server",
+            "problemMatcher": []
+        }
     ]
 }

@@ -20,7 +20,7 @@ h3, h4 {
 
 header {
     position: fixed;
-    height: 68px;
+    height: 80px;
     z-index: 1;
     background-color: white;
     box-shadow: 0px 1px 10px #c0c0cc3b;
@@ -43,7 +43,7 @@ main {
 
 section {
     position:absolute;
-    top: 68px;
+    top: 80px;
     left:0px;
     right:0px;
     bottom:0px;
@@ -102,25 +102,25 @@ div.contact > div {
     font-family: "Share Tech Mono";
 }
 
-div.contact > div > a {
+div.contact > div > div > a {
     display: block;
     width: fit-content;
     text-decoration: none;
     color: black;
 }
 
-div.contact > div > a:visited {
+div.contact > div > div > a:visited {
     color: black;
 }
 
-div.contact > div > a > img {
+div.contact > div > div > a > img {
     position: absolute;
     margin-top: 3px;
     width: 13px;
     height: 13px;
 }
 
-div.contact > div > a > span {
+div.contact > div > div > a > span {
     margin-left: 20px;
 }
 
@@ -166,14 +166,6 @@ article > div.subtitle {
 
 /* Media queries */
 @media(max-width: 800px) {
-    header {
-        height: 64px;
-    }
-
-    section {
-        top: 64px;
-    }
-
     nav {
         width: 180px;
     }
@@ -215,29 +207,25 @@ article > div.subtitle {
         margin: auto .7em;
     }
 
-    div.contact > div {
+    div.contact > div > div {
         display: inline;
     }
 
-    div.contact > div > a {            
+    div.contact > div > div > a {            
         display: inline-block;
         width: 20px;
         height: 20px;
         margin: 0 0 0 .25em;
     }
 
-    div.contact > div > a:first-child {
-        margin: 0;
-    }
-
-    div.contact > div > a > img {    
+    div.contact > div > div > a > img {    
         display: flex;
         flex-direction: column;
         width: 20px;
         height: 20px;
     }
 
-    div.contact > div > a > span {
+    div.contact > div > div > a > span {
         display: none;
     }
 
@@ -271,5 +259,12 @@ article > div.subtitle {
     article {
         padding: 0.25em 1em;
         margin: .5em;
+    }
+}
+
+@media(max-width: 400px) {
+    div.contact > div > div { 
+        display: block;   
+        margin: .25em .05em;
     }
 }

@@ -87,7 +87,7 @@ main {
 /* Header */
 div.title,
 div.contact {
-    margin: auto 1.5em;
+    margin: auto 2em;
 }
 
 div.title > h1 {
@@ -226,7 +226,7 @@ article > div.subtitle {
     }
 
     div.title, div.contact {
-        margin: auto .7em;
+        margin: auto 1em;
     }
 
     div.contact > div > div {

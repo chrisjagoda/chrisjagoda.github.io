@@ -150,6 +150,11 @@ nav > a:hover,
     padding-left: 28px;
 }
 
+nav > a:hover > svg,
+.selected > svg {
+    transform: rotate(90deg);
+}
+
 /* Main */
 article > h4 {
     display: inline-block;
@@ -169,7 +174,8 @@ article > div.subtitle {
     stroke:black;
     stroke-width: .07em;
     stroke-linecap:round;
-    margin: .24em;
+    margin: .24em;    
+    transition: 0.5s all;
 }
 
 .line {

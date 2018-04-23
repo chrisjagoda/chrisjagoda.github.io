@@ -164,6 +164,22 @@ article > div.subtitle {
     font-style: italic;
 }
 
+.svg-icon {
+    cursor: pointer;
+    stroke:black;
+    stroke-width: .07em;
+    stroke-linecap:round;
+    margin: .24em;
+}
+
+.line {
+    float: right;
+}
+
+.arrow-right {
+    position: absolute;
+}
+
 /* Media queries */
 @media(max-width: 800px) {
     nav {
@@ -259,6 +275,10 @@ article > div.subtitle {
     article {
         padding: 0.25em 1em;
         margin: .5em;
+    }
+
+    .line {
+        position: absolute;
     }
 }
 

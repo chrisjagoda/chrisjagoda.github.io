@@ -39,13 +39,22 @@
                 <div>&middot;</div>
             </div>
             <a class="selected" id="educationSelector" onclick="scrollToEducation()">
-                Education
+                <span>Education</span>
+                <svg class="svg-icon line" height="15" width="15">
+                    <line x1="2" y1="2" x2="14" y2="14"/>
+                </svg>
             </a>
             <a id="workSelector" onclick="scrollToWork()">
-                Work History
+                <span>Work History</span>
+                <svg class="svg-icon line" height="15" width="15">
+                    <line x1="2" y1="2" x2="14" y2="14"/>
+                </svg>
             </a>
             <a id="projectsSelector" onclick="scrollToProjects()">
-                Projects
+                <span>Projects</span>
+                <svg class="svg-icon line" height="15" width="15">
+                    <line x1="2" y1="2" x2="14" y2="14"/>
+                </svg>
             </a>
         </nav>
         <main>
@@ -56,7 +65,11 @@
                     B.S. Computer Science
                 </p>
                 <p>
-                    Courses<span class="right-arrow"></span>
+                    <span>Courses: </span>
+                    <svg class="svg-icon arrow-right" height="15" width="15">
+                        <line x1="4" y1="2" x2="12" y2="7"/>
+                        <line x1="4" y1="12" x2="12" y2="7"/>
+                    </svg>
                 </p>
             </article>
             <article id="work">

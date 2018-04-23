@@ -145,11 +145,6 @@ nav > a:hover {
     cursor: pointer;
 }
 
-nav > a:hover,
-.selected {
-    padding-left: 28px;
-}
-
 nav > a:hover > svg,
 .selected > svg {
     transform: rotate(90deg);
@@ -294,6 +289,6 @@ article > div.subtitle {
     }    
 
     div.title, div.contact {
-        margin: auto 1.4em;
+        margin: auto 1em;
     }
 }

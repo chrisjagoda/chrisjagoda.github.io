@@ -1,56 +1,61 @@
-
-var selector = document.getElementById('selector');
-var educationSelector = document.getElementById('educationSelector');
-var workSelector = document.getElementById('workSelector');
-var projectsSelector = document.getElementById('projectsSelector');
-var education = document.getElementById('education');
-var work = document.getElementById('work');
-var projects = document.getElementById('projects');
-var scrollArea = document.getElementById("scrollArea");
-var selected;
-
-scrollArea.addEventListener('scroll', function(e) {
-    if (scrollArea.scrollTop > projects.offsetTop - 100 ||
-        scrollArea.scrollTop >= scrollArea.scrollHeight - scrollArea.clientHeight - 1) {
-        select("projects");
+(function() {
+    var posts;
+    var filters;
+    var wrapper;
+  
+    var ammountOfItemsToRevealAtATime = 5;
+    var bottomScrollReveal = 1000; //px
+  
+    function init() {
+      posts = document.querySelector('.content');
+      filters = document.querySelectorAll('input');
+      wrapper = document.querySelector('.wrapper');
+  
+      filters.forEach(function(element) {
+        element.addEventListener('change', onFilterChange);
+      });
+  
+      wrapper.addEventListener('scroll', onScroll);
     }
-    else if (scrollArea.scrollTop > work.offsetTop - 100) {
-        select("work");
+  
+    // Show/Hide elements based on filters
+    function onFilterChange(event) {
+      var data = this.dataset.type;
+      var checked = this.checked;
+      var changedClass = 'no-' + data;
+  
+      if (checked === true) {
+        posts.classList.remove(changedClass);
+      } else {
+        posts.classList.add(changedClass);
+      }
+  
+      loadMoreItems();
     }
-    else {
-        select("education");
+  
+    // Reveal templates/new posts as you scroll down
+    function onScroll(event) {
+      if (
+        wrapper.scrollHeight - wrapper.scrollTop - bottomScrollReveal <
+        wrapper.clientHeight
+      ) {
+        loadMoreItems();
+      }
     }
-});
-
-function select(target) {
-    if (selected != target) {
-        resetSelection();
-        selected = target;
-        if (target == "education") {
-            educationSelector.classList.add("selected");
-        }
-        else if (target == "work") {
-            workSelector.classList.add("selected");
-        }
-        else {
-            projectsSelector.classList.add("selected");
-        }
+  
+    function loadMoreItems() {
+      var template = document.querySelector('template');
+  
+      if (template === null) {
+        return;
+      }
+  
+      template.parentNode.replaceChild(
+        document.importNode(template.content, true),
+        template
+      );
     }
-}
-
-function resetSelection() {
-    educationSelector.classList.remove("selected");
-    workSelector.classList.remove("selected");
-    projectsSelector.classList.remove("selected");
-}
-
-function scrollToTarget(target) {
-    return function() {
-        target.scrollIntoView({behavior:'smooth', block:'start'});
-        select(target.id);
-    }
-}
-
-var scrollToEducation = scrollToTarget(education);
-var scrollToWork = scrollToTarget(work);
-var scrollToProjects = scrollToTarget(projects);
+  
+    init();
+  })();
+  

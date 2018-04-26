@@ -1,126 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>Chris Jagoda</title>
+    <title>Chris Jagoda's Software Blog</title>
+    <meta name="description" content="Welcome to the website of Chris Jagoda, this is where you can see some of the stuff I've created, how I went about doing it, and other thoughts on software, programming, and computer science.">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600|Share+Tech+Mono" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:900" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="lg-col title">
-            <h1>Chris Jagoda</h1>
-        </div>
-        <div class="sm-col contact">
-            <div>
-                <div>
-                    <a href="https://github.com/chrisjagoda" target="_blank"><img src="images/github.png" height="16px" width="16px">&#8203;</img><span>github.com/chrisjagoda</span></a>
-                    <a href="mailto:chrisjagoda@live.com"><img src="images/email-dark.png" height="16px" width="16px">&#8203;</img><span>chrisjagoda@live.com</span></a>
+    <section class="wrapper">
+        <div class="content">
+            <header>
+                <div class="about">
+                    <h2>THE THOUGHTS AND CODE OF</h2>
+                    <h1>CHRIS JAGODA</h1>
+                    <p>
+                        Student, web/software developer, tinkerer.
+                    </p>
+                    <p class="links">
+                        <b>Get in touch:</b>
+                        <a href="http://github.com/chrisjagoda">Github</a>,
+                        <a href="https://www.linkedin.com/in">Linkedin</a>,
+                        <a href="mailto:chrisjagoda@gmail.com">Email</a> &amp;
+                        <a href="chrisJagodaResume.pdf" target="_blank">Resume</a>
+                    </p>
+                    <!-- <p class="filters">
+                        <b>Some filters:</b><br>
+                        <label for="serious-checkbox"> Serious Stuff </label>
+                        <input id="serious-checkbox" type="checkbox" checked data-type="serious"><br>
+
+                        <label for="joke-checkbox"> Jokey Stuff </label>
+                        <input id="joke-checkbox" type="checkbox" checked data-type="joke"><br>
+
+                        <label for="audio-checkbox"> Talks & Podcasts </label>
+                        <input id="audio-checkbox" type="checkbox" checked data-type="audio">
+                    </p> -->
                 </div>
-                <div>
-                    <a href="https://www.linkedin.com/in/christopher-jagoda-a2211014a/" target="_blank"><img src="images/linkedin-dark.png" height="16px" width="16px">&#8203;</img><span>linkedin</span></a>
-                    <a href="resume.pdf" target="_blank"><img src="images/resume-dark.png" height="16px" width="16px">&#8203;</img><span>resume</span></a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section id="scrollArea">
-        <nav>
-            <div class="about">
-                <div>&middot;</div>
-                <div>student</div>
-                <div>&middot;</div>
-                <div>tech hobbyist</div>
-                <div>&middot;</div>
-                <div>web/software developer</div>
-                <div>&middot;</div>
-            </div>
-            <a class="selected" id="educationSelector" onclick="scrollToEducation()">
-                <span>Education</span>
-                <svg class="svg-icon line" height="15" width="15">
-                    <line x1="2" y1="2" x2="14" y2="14"/>
-                </svg>
-            </a>
-            <a id="workSelector" onclick="scrollToWork()">
-                <span>Work History</span>
-                <svg class="svg-icon line" height="15" width="15">
-                    <line x1="2" y1="2" x2="14" y2="14"/>
-                </svg>
-            </a>
-            <a id="projectsSelector" onclick="scrollToProjects()">
-                <span>Projects</span>
-                <svg class="svg-icon line" height="15" width="15">
-                    <line x1="2" y1="2" x2="14" y2="14"/>
-                </svg>
-            </a>
-        </nav>
-        <main>
-            <article id="education">
-                <h1>Education</h1>
-                <h4 style="margin-bottom: 0">Montclair State University</h4><span class="pull-right">May 2018</span>
-                <p>
-                    B.S. Computer Science
-                </p>
-                <p>
-                    <span>Courses: </span>
-                    <svg class="svg-icon arrow-right" height="15" width="15">
-                        <line x1="4" y1="2" x2="12" y2="7"/>
-                        <line x1="4" y1="12" x2="12" y2="7"/>
-                    </svg>
+            </header>
+            <article class="pinned serious">
+                <p style="text-align:center">
+                    Available for hire - full-time / contract / freelance
                 </p>
             </article>
-            <article id="work">
-                <h1>Work History</h1>
-                <h4>Advanced System Concepts</h4><span class="pull-right">May 2017 - September 2017</span>
+
+            <article class="serious">
+                <h1>Interfaces - Java C#, TypeScript &amp; beyond</h1>
+                <p><em>Those of us who are programmers probably have some idea of what an interface does, but today I wanted to take a deep dive into a few a different languages' implementations of interfaces and find out the differences.</em></p>
                 <p>
-                    <div>​Worked within a scrum team developing an in-house software tool to improve communication and productivity among developers by providing an interface to dynamically monitor and report information.</div>
-                    <div>Developed frontend architecture utilizing latest technologies and development practices.</div>
-                    <div>Created REST endpoints and stored procedures to store and retrieve data, as well as working with various windows services and APIs.</div>
+                  Generally an interface represents a contract between two entities - the first is the abstract data type that will implement the interface and the second being the interface whose properties and methods the object must implement.
                 </p>
-                <h4>Freelance Web Development</h4><span class="pull-right">2014 - Present</span>
                 <p>
-                    <div>Freelance web development including designing, maintaining, and monitoring websites/applications.</div>
-                    <div>Worked with several content management systems designing, creating, and connecting databases to websites as well as database administration.</div>
+                  Interfaces generally work the same in Java and C#, where interfaces are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
                 </p>
-            </article>
-            <article id="projects">
-                <h1>Projects</h1>
-                <h4>Saved To Bookmark for Reddit</h4>
-                <div class="subtitle">
-                    Python, Javascript, Bootstrap, Flask, AWS
-                </div>
                 <p>
-                    A chrome extension for converting a user's saved posts on reddit to bookmarks in chrome. Logs in through reddit’s API and requests a user’s saved posts which may then be selected and converted to bookmarks for the chrome web browser.
+                  Java and C# do things a bit differently when it comes to interface properties however. In Java you may initialize a property inside of an interface which will be treated as final static, and access that property without implementing it in the class that implements it. In a C# interface variables cannot be initialized, the interface only lets a class know which properties it must implement.
                 </p>
-                <h4>Mesh Network Messaging App</h4>
-                <div class="subtitle">
-                    Java, Android
-                </div>
                 <p>
-                    A distributed mesh-network android messaging application built using the Nearby API provided by Google for Android. Creates a distributed network of users able to communicate with eachother using peer-to-peer wifi and blutooth.
+                  TypeScript interfaces are a different story, while they act and may be used similarly to C# interfaces in practice they can be used very differently. Normally an interface is used as a contract with a class, which implements its methods. In C#, Java, and TypeScript you may use an interface as a type for a class that implements that interface, as well as return and parameter type checking and generic constraints. You may not however initialize an instance of a interface… unless you’re programming in TypeScript.
                 </p>
-                <h4>Crypto Spreadsheet Sync</h4>
-                <div class="subtitle">
-                    Python, Google Cloud Platform
-                </div>
                 <p>
-                    A command line utility for retrieving up to date cryptocurrency prices and information from an online cryptocurrency market price aggregator, and writing that to a google sheet with the Google Sheets API.
-                </p>
-                <h4>Conway's Game of Life</h4>
-                <div class="subtitle">Tap to start &amp; stop, double tap to reset</div>
-                <p>
-                    <canvas id="life"></canvas>
+                  In typescript interfaces may be treated like a struct, something the language does not have. This treatment of interfaces allows a lot of possibilities in using them. While TypeScript has a type alias as well which can be used similarly, there are often advantages to using interfaces instead. Some of these are the ability to be used in an extends or implements clause and the ability to have multiple merged declarations, both a type alias cannot do.
                 </p>
             </article>
-            <script>
-                require(["bundle"], function(app) {
-                });
-            </script>
-        </main>
+
+            <article class="joke">
+              <h1>Conway's Game of Life... with colors!</h1>
+              <p><em>For those unfamiliar with Conway's Game of Life, it is a zero-player "game" devised in 1970 by British mathematician John Conway.</em></p>
+              <p>
+                The game is carried out on a two-dimensional orthogonal grid of square "cells", each of which is in two possible states, dead or alive. Each cell has eight neighbors which are the cells that are horizontally, vertically, and diagonally adjacent. At each step in time, the following rules decide the next generation:
+              </p>
+              <p>1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</p>
+              <p>2. Any live cell with two or three live neighbours lives on to the next generation.</p>
+              <p>3. Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
+              <p>4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
+              </p>
+              <p>
+                The twists I added to the game in the form of colors is a random color assigned to each cell in the intial state &amp; at each step any live or newly live cell is randomly assigned one of the colors from its live neighbors. Written in TypeScript.
+              </p>
+              <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
+              <p style="text-align:center">
+                <canvas id="life"></canvas>
+              </p>
+          </article>
+          <div class="under-padding"></div>
     </section>
-    <script src="index.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script>
+        require(["bundle"], function(app) {
+        });
+    </script>
 </body>
 </html>

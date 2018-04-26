@@ -2,6 +2,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const gameOfLife_1 = require("./gameOfLife");
+var canvas = document.getElementById("life");
+var cell_width = 4;
+var cell_height = 4;
+var canvas_width = 300;
+var canvas_height = 200;
+var frequency = 0.1;
+var colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
+var running = false;
+var cells;
+var game;
 function genCells(cell_size_x, cell_size_y, canvas_width, canvas_height, frequency) {
     var width = canvas_width ||
         window.innerWidth ||
@@ -24,39 +34,26 @@ function genCells(cell_size_x, cell_size_y, canvas_width, canvas_height, frequen
     }
     return cells;
 }
-var canvas = document.getElementById("life");
-var cell_width = 4;
-var cell_height = 4;
-var canvas_width = canvas.clientWidth;
-var canvas_height = canvas.clientHeight;
-var frequency = 0.1;
-var colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
-var cells;
-var game;
-var started = false;
 function createNewGame() {
     cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
     game = new gameOfLife_1.GameOfLife(cells, cell_width, cell_height, "life", colors);
 }
 function startGame() {
     game.interval = setInterval(function () { game.step(); }, 100);
-    started = true;
+    running = true;
 }
 function stopGame() {
     clearInterval(game.interval);
     game.interval = 0;
-    started = false;
+    running = false;
 }
 function resetGame() {
     stopGame();
-    canvas_height = canvas.clientHeight;
-    canvas_width = canvas.clientWidth;
     colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
     createNewGame();
 }
-createNewGame();
 canvas.addEventListener("click", function () {
-    if (!started)
+    if (!running)
         startGame();
     else
         stopGame();
@@ -64,6 +61,7 @@ canvas.addEventListener("click", function () {
 canvas.addEventListener("dblclick", function () {
     resetGame();
 });
+createNewGame();
 
 },{"./gameOfLife":2}],2:[function(require,module,exports){
 "use strict";
@@ -77,14 +75,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @param {string} the id of the canvas element
  */
 class GameOfLife {
-    constructor(init_cells, cell_width, cell_height, canvas_id, colors, evolved) {
+    constructor(init_cells, cell_width, cell_height, canvas_id, colors) {
         this.num_cells_y = init_cells.length;
         this.num_cells_x = init_cells[0].length || 0;
         this.cell_width = cell_width || 5;
         this.cell_height = cell_height || 5;
         this.canvas_id = canvas_id || "life";
         this.colors = colors || { red: true, green: true, blue: true };
-        this.evolved = evolved || false;
         this.cell_array = [];
         this.display = new GameDisplay(this.num_cells_x, this.num_cells_y, cell_width, cell_height, canvas_id);
         this.interval = null; // initial interval to null. Set when setInterval called on step
@@ -154,38 +151,19 @@ class GameOfLife {
                         dead_count++;
                     }
                 });
-                // variant alg with evolved set to true
                 let is_alive = cell.alive;
                 if (cell.alive) {
                     if (alive_count < 2 || alive_count > 3) {
                         // new state: dead, overpopulation/underpopulation
-                        if (this.evolved) {
-                            cell.alive = false;
-                        }
                         is_alive = false;
                     }
                     else if (alive_count === 2 || alive_count === 3) {
-                        // lives on to next generation
-                        if (this.evolved) {
-                            cell.alive = true;
-                            if (!cell.color) {
-                                cell.color = neighbor_colors[Math.floor(Math.random() * neighbor_colors.length)];
-                                ;
-                            }
-                        }
                         is_alive = true;
                     }
                 }
                 else {
                     if (alive_count === 3) {
                         // new state: live, reproduction
-                        if (this.evolved) {
-                            cell.alive = true;
-                            if (!cell.color) {
-                                cell.color = neighbor_colors[Math.floor(Math.random() * neighbor_colors.length)];
-                                ;
-                            }
-                        }
                         is_alive = true;
                     }
                 }
@@ -196,9 +174,6 @@ class GameOfLife {
                         neighbor_colors.push(cell.color);
                     }
                     parent_colors = neighbor_colors.splice(Math.floor(Math.random() * neighbor_colors.length), 1);
-                    if (neighbor_colors.length > 0) { // fix for evolved - allows single parent color
-                        parent_colors.push(neighbor_colors[Math.floor(Math.random() * neighbor_colors.length)]);
-                    }
                     child_color = parent_colors[Math.floor(Math.random() * parent_colors.length)];
                 }
                 // create new cell based on color from neighbors dead cell color null

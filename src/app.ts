@@ -1,5 +1,16 @@
 import { GameOfLife, Colors } from './gameOfLife';
 
+var canvas = document.getElementById("life");
+var cell_width: number = 4;
+var cell_height: number = 4;
+var canvas_width: number = 300;
+var canvas_height: number = 200;
+var frequency: number = 0.1;
+var colors: Colors = <Colors>{red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5};
+var running: boolean = false;
+var cells: number[][];
+var game: GameOfLife;
+
 function genCells(cell_size_x: number, cell_size_y: number, canvas_width?: number, canvas_height?: number, frequency?: number): number[][] {
   var width: number = canvas_width ||
                       window.innerWidth ||
@@ -23,20 +34,37 @@ function genCells(cell_size_x: number, cell_size_y: number, canvas_width?: numbe
   return cells;
 }
 
-var cell_width: number = 4;
-var cell_height: number = 4;
-var canvas_width: number = null;
-var canvas_height: number = 300;
-var frequency: number = 0.1;
-var colors: Colors = <Colors>{red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5};
-
-var cells: number[][];
-var game: GameOfLife;
-
 function createNewGame() {
   cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
   game = new GameOfLife(cells, cell_width, cell_height, "life", colors);
-  game.interval = setInterval(function () { game.step(); }, 100);
 }
+
+function startGame() {
+  game.interval = setInterval(function () { game.step(); }, 100);
+  running = true;
+}
+
+function stopGame() {
+  clearInterval(game.interval);
+  game.interval = 0;
+  running = false;
+}
+
+function resetGame() {
+  stopGame();
+  colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
+  createNewGame();
+}
+
+canvas.addEventListener("click", function () {
+  if (!running)
+      startGame();
+  else
+      stopGame();
+});
+
+canvas.addEventListener("dblclick", function () {
+  resetGame();
+});
 
 createNewGame();

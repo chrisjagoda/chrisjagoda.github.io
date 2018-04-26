@@ -10,11 +10,10 @@ body {
   margin: 0px; }
 
 html {
-  border: 10px solid #eee; }
+  border: 10px solid lightgoldenrodyellow; }
 
 body {
-  font-family: Menlo, "Lucida Console";
-  text-rendering: geometricPrecision;
+  font-family: Menlo, "Courier New", Courier, monospace, "Lucida Console";
   background: #fcfcfc;
   color: #222; }
 
@@ -68,12 +67,12 @@ article {
 
 a.clean {
   text-decoration: none;
-  color: #222; }
+  color: #222000; }
   a.clean:hover {
     text-decoration: underline; }
 
 header {
-  border-right: 2px dashed #eee;
+  border-right: 2px dashed #eeefff;
   position: fixed;
   width: 240px;
   height: 100%;
@@ -114,7 +113,7 @@ h1 {
   font-size: 20px; }
 
 em {
-  color: #666; }
+  color: #777; }
 
 p {
   font-size: 14px;

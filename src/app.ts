@@ -3,7 +3,7 @@ import { GameOfLife, Colors } from './gameOfLife';
 var canvas = document.getElementById("life");
 var cell_width: number = 4;
 var cell_height: number = 4;
-var canvas_width: number = 300;
+var canvas_width: number = 250;
 var canvas_height: number = 200;
 var frequency: number = 0.1;
 var colors: Colors = <Colors>{red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5};

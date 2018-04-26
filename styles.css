@@ -13,7 +13,7 @@ html {
   border: 10px solid lightgoldenrodyellow; }
 
 body {
-  font-family: Menlo, "Courier New", Courier, monospace, "Lucida Console";
+  font-family: "IBM Plex Mono", monospace, Menlo, Courier, monospace, "Lucida Console";
   background: #fcfcfc;
   color: #222; }
 
@@ -85,7 +85,8 @@ header {
   top: 0px; }
   header h1,
   header h2 {
-    font-family: "Barlow Semi Condensed", HelveticaNeue-CondensedBlack;
+    font-family: "Barlow Semi Condensed", HelveticaNeue-CondensedBlack, Impact;
+    font-style: bold;
     margin-bottom: 0px; }
   header h2 {
     font-size: 20px;

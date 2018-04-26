@@ -20,6 +20,7 @@
                     <p>
                         Computer science student, web/software developer, tinkerer.
                     </p>
+
                     <p class="links">
                         <b style="display:block">Get in touch:</b>
                         <a href="http://github.com/chrisjagoda">Github</a>,
@@ -27,19 +28,19 @@
                         <a href="mailto:chrisjagoda@gmail.com">Email</a> &amp;
                         <a href="chrisJagodaResume.pdf" target="_blank">Resume</a>.
                     </p>
-                    <!-- <p class="filters">
-                        <b>Some filters:</b><br>
-                        <label for="serious-checkbox"> Serious Stuff </label>
-                        <input id="serious-checkbox" type="checkbox" checked data-type="serious"><br>
 
-                        <label for="joke-checkbox"> Jokey Stuff </label>
-                        <input id="joke-checkbox" type="checkbox" checked data-type="joke"><br>
-
-                        <label for="audio-checkbox"> Talks & Podcasts </label>
-                        <input id="audio-checkbox" type="checkbox" checked data-type="audio">
-                    </p> -->
+                    <p class="filters">
+                        <b>Filter:</b><br>
+                        <label for="serious-checkbox">Serious stuff</label>
+                        <input id="serious-checkbox" type="checkbox" checked data-type="serious">
+                        <br>
+                        <label for="fun-checkbox">Fun stuff</label>
+                        <input id="fun-checkbox" type="checkbox" checked data-type="fun">
+                        <br>
+                    </p>
                 </div>
             </header>
+            
             <article class="pinned serious">
                 <p style="text-align:center">
                     Available for hire - full-time / contract / freelance
@@ -66,7 +67,7 @@
                 </p>
             </article>
 
-            <article class="joke">
+            <article class="fun">
               <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life... with colors!</a></h1>
               <p><em>For those unfamiliar with Conway's Game of Life, it is a zero-player "game" devised in 1970 by British mathematician John Conway.</em></p>
               <p>
@@ -78,7 +79,7 @@
               <p>4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
               </p>
               <p>
-                The twists I added to the game in the form of colors is a random color assigned to each cell in the intial state &amp; at each step any live or newly live cell is randomly assigned one of the colors from its live neighbors. Written in TypeScript.
+                I added a twist to the game in is in the form of colors which are randomly assigned to each cell on the game's intialization. At each step any live cell is randomly assigned one of the colors from its live neighbors. Sort of like passing down traits from one generation to the next, with each new generation having equal chance to inherit the color of any one of its live neighbors' color. Written in TypeScript.
               </p>
               <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
               <p style="text-align:center">

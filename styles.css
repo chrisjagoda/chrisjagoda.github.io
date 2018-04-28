@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: "IBM Plex Mono", monospace, Menlo, Courier, monospace, "Lucida Console";
-  background: #fcfcfc;
+  background: #fdfdfd;
   color: #222; }
 
 h1 {
@@ -33,7 +33,7 @@ section {
 
 .pinned {
   background: #222;
-  color: #eee;
+  color: #eef;
   border-top: 2px dashed;
   padding-right: 75px;
   padding-left: 75px;
@@ -53,12 +53,12 @@ section {
 
 .under-padding {
   margin-left: 240px;
-  border-top: 2px solid #fcfcfc;
+  border-top: 2px solid #fdfdfd;
   margin-top: -2px; }
 
 article {
   margin-left: 240px;
-  border-bottom: 2px dashed #eee;
+  border-bottom: 2px dashed #eef;
   padding: 20px;
   padding-left: 30px;
   padding-right: 30px; }
@@ -72,17 +72,17 @@ a.clean {
     text-decoration: underline; }
 
 header {
-  border-right: 2px dashed #eeefff;
+  border-right: 2px dashed #eef;
   position: fixed;
   width: 240px;
-  height: 100%;
+  height: 97%;
   padding-right: 30px;
   padding-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: right;
-  top: 0px; }
+  top: 10px; }
   header h1,
   header h2 {
     font-family: "Barlow Semi Condensed", HelveticaNeue-CondensedBlack, Impact;

@@ -16,6 +16,8 @@ var running2: boolean = false;
 var cells: number[][];
 var game1: GameOfLifeBase;
 var game2: GameOfLifeMandala1;
+var display1: GameDisplay;
+var display2: GameDisplay;
 
 function genCells(cell_size_x: number, cell_size_y: number, canvas_width?: number, canvas_height?: number, frequency?: number): number[][] {
   var width: number = canvas_width ||
@@ -42,19 +44,18 @@ function genCells(cell_size_x: number, cell_size_y: number, canvas_width?: numbe
 
 function createNewGame(type: string) {
   cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
-  let display: GameDisplay;
   switch(type) {
-    case 'base':
-      display = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
-      game1 = new GameOfLifeBase(display, cells, cell_width, cell_height, colors);
+    case 'base':      
+      display1 = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
+      game1 = new GameOfLifeBase(display1, cells, cell_width, cell_height, colors);
       break;
     case 'mandala':
-      display = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
-      game2 = new GameOfLifeMandala1(display, cells, cell_width, cell_height, colors);
+      display2 = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
+      game2 = new GameOfLifeMandala1(display2, cells, cell_width, cell_height, colors);
       break;
     default:
-      display = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
-      game1 = new GameOfLifeBase(display, cells, cell_width, cell_height, colors);
+      display1 = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
+      game1 = new GameOfLifeBase(display1, cells, cell_width, cell_height, colors);
   }
 }
 

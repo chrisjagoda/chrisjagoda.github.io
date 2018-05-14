@@ -64,9 +64,11 @@ function startGame(type: string) {
     case 'base':
       game1.interval = setInterval(function () { game1.step(); }, 100);
       running1 = true;
+      break;
     case 'mandala':
       game2.interval = setInterval(function () { game2.step(); }, 100);
       running2 = true;
+      break;
     default:
       game1.interval = setInterval(function () { game1.step(); }, 100);
       running1 = true;
@@ -79,10 +81,12 @@ function stopGame(type: string) {
       clearInterval(game1.interval);
       game1.interval = 0;
       running1 = false;
+      break;
     case 'mandala':
       clearInterval(game2.interval);
       game2.interval = 0;
       running2 = false;
+      break;
     default:
       clearInterval(game1.interval);
       game1.interval = 0;

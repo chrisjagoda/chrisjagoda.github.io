@@ -313,6 +313,8 @@ var running2 = false;
 var cells;
 var game1;
 var game2;
+var display1;
+var display2;
 function genCells(cell_size_x, cell_size_y, canvas_width, canvas_height, frequency) {
     var width = canvas_width ||
         window.innerWidth ||
@@ -337,19 +339,18 @@ function genCells(cell_size_x, cell_size_y, canvas_width, canvas_height, frequen
 }
 function createNewGame(type) {
     cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
-    let display;
     switch (type) {
         case 'base':
-            display = new GameDisplay_1.GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
-            game1 = new GameOfLife_1.GameOfLifeBase(display, cells, cell_width, cell_height, colors);
+            display1 = new GameDisplay_1.GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
+            game1 = new GameOfLife_1.GameOfLifeBase(display1, cells, cell_width, cell_height, colors);
             break;
         case 'mandala':
-            display = new GameDisplay_1.GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
-            game2 = new GameOfLife_1.GameOfLifeMandala1(display, cells, cell_width, cell_height, colors);
+            display2 = new GameDisplay_1.GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
+            game2 = new GameOfLife_1.GameOfLifeMandala1(display2, cells, cell_width, cell_height, colors);
             break;
         default:
-            display = new GameDisplay_1.GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
-            game1 = new GameOfLife_1.GameOfLifeBase(display, cells, cell_width, cell_height, colors);
+            display1 = new GameDisplay_1.GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
+            game1 = new GameOfLife_1.GameOfLifeBase(display1, cells, cell_width, cell_height, colors);
     }
 }
 function startGame(type) {
@@ -357,9 +358,11 @@ function startGame(type) {
         case 'base':
             game1.interval = setInterval(function () { game1.step(); }, 100);
             running1 = true;
+            break;
         case 'mandala':
             game2.interval = setInterval(function () { game2.step(); }, 100);
             running2 = true;
+            break;
         default:
             game1.interval = setInterval(function () { game1.step(); }, 100);
             running1 = true;
@@ -371,10 +374,12 @@ function stopGame(type) {
             clearInterval(game1.interval);
             game1.interval = 0;
             running1 = false;
+            break;
         case 'mandala':
             clearInterval(game2.interval);
             game2.interval = 0;
             running2 = false;
+            break;
         default:
             clearInterval(game1.interval);
             game1.interval = 0;

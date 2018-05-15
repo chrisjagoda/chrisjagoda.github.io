@@ -76,7 +76,7 @@
             </article>
 
             <article class="fun">
-                <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life Mandala Generator</a></h1>
+                <h1><a class="clean" href="posts/mandala.html">Conway's Game of Life Mandala Generator</a></h1>
                 <p><em>Continuing off of my post below of my colorful game life implementation I decided to adapt it into a mandala generator.</em></p>
                 <p>
                     Taking a little inspiration from <a href="https://www.reddit.com/r/proceduralgeneration/comments/8igkyb/mandala_automata/" target="_">this</a> reddit post, I thought I'd try to adapt my game of life implementation into a mandala generator.
@@ -91,14 +91,14 @@
               <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life... with colors!</a></h1>
               <p><em>For those unfamiliar with Conway's Game of Life, it is a zero-player "game" devised in 1970 by British mathematician John Conway.</em></p>
               <p>
-                The game is carried out on a two-dimensional orthogonal grid of square "cells", each of which is in two possible states, dead or alive. Each cell has eight neighbors which are the cells that are horizontally, vertically, and diagonally adjacent. At each step in time, the following rules decide the next generation:
+                The game is carried out on a two-dimensional orthogonal grid of square "cells", each of which in one of two possible states, dead or alive. Each cell has eight neighbors which are the cells that are horizontally, vertically, and diagonally adjacent. At each step in time, the following rules decide the next generation:
               </p>
               <p>1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</p>
               <p>2. Any live cell with two or three live neighbours lives on to the next generation.</p>
               <p>3. Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
               <p>4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
               <p>
-                I added a twist to the game in is in the form of colors which are randomly assigned to each cell on the game's intialization. At each step any live cell is randomly assigned one of the colors from its live neighbors. Sort of like passing down traits from one generation to the next, with each new generation having equal chance to inherit the color of any one of its live neighbors' color. Written in TypeScript.
+                I added a twist to the game in is in the form of colors which are randomly assigned to each cell on the game's intialization. At each step any live cell is randomly assigned one of the colors from its live neighbors. Sort of like passing down traits from one generation to the next, with each new generation having equal chance to inherit the color from any one of its live neighbors' or 'parents''. Written in TypeScript.
               </p>
               <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
               <p style="text-align:center">
@@ -108,8 +108,7 @@
           <div class="under-padding"></div>
     </section>
     <script>
-        require(["bundle"], function(app) {
-        });
+        require(["bundle"], function(app) {});
     </script>
     <script type="text/javascript" src="index.js"></script>
 </body>

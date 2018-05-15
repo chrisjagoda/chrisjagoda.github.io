@@ -54,8 +54,7 @@
         document.importNode(template.content, true),
         template
       );
-    }
-  
+    }  
     init();
   })();
   

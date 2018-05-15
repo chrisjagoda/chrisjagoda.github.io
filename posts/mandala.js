@@ -2835,7 +2835,7 @@
     var GameControls = function () {
         this.selected = 'mandala1';
         this.cell_width = 4;
-        this.canvas_width = getMaxCanvasSize();
+        this.canvas_width = 256;
         this.frequency = 0.25;
         this.red = true;
         this.green = true;

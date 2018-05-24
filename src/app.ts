@@ -10,7 +10,7 @@ var canvas_width: number = 256;
 var canvas_height: number = 256;
 var frequency: number = 0.2;
 var alpha: number = 0.5;
-var colors: Colors = <Colors>{red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5};
+var colors: Colors;
 var running1: boolean = false;
 var running2: boolean = false;
 var cells: number[][];
@@ -44,6 +44,7 @@ function genCells(cell_size_x: number, cell_size_y: number, canvas_width?: numbe
 
 function createNewGame(type: string) {
   cells = genCells(cell_width, cell_height, canvas_width, canvas_height, frequency);
+  colors = <Colors>{red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5};
   switch(type) {
     case 'base':      
       display1 = new GameDisplay(type, cells.length, cells[0].length, cell_width, cell_width, alpha);
@@ -93,9 +94,7 @@ function stopGame(type: string) {
       running1 = false;
   }
 }
-
 function resetGame(type: string) {
-  colors = { red: Math.random() < 0.5, green: Math.random() < 0.5, blue: Math.random() < 0.5 };
   stopGame(type);
   createNewGame(type);
 }

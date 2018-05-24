@@ -10,7 +10,7 @@ body {
   margin: 0px; }
 
 html {
-  border: 10px solid lightgoldenrodyellow; }
+  border: 10px solid lightgreen; }
 
 body {
   font-family: "IBM Plex Mono", monospace, Menlo, Courier, monospace, "Lucida Console";
@@ -39,7 +39,7 @@ section {
   padding-left: 75px;
   position: relative; }
   .pinned a {
-    color: goldenrod; }
+    color: seagreen; }
   .pinned:after, .pinned:before {
     content: '📌';
     position: absolute;
@@ -89,7 +89,7 @@ header {
   header h2 {
     font-size: 20px;
     letter-spacing: 1px;
-    color: goldenrod;
+    color: seagreen;
     margin-top: 10px; }
   header h1 {
     margin-top: 0px;
@@ -123,7 +123,7 @@ p {
 
 blockquote {
   margin-left: 0px;
-  border-left: 3px solid goldenrod;
+  border-left: 3px solid seagreen;
   padding-left: 25px;
   margin-top: 25px;
   margin-bottom: 25px; }

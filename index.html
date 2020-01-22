@@ -18,98 +18,140 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 </head>
 <body>
-    <section class="wrapper">
-        <div class="content">
-            <header>
-                <div class="about">
-                    <h2>THE THOUGHTS AND CODE OF</h2>
-                    <h1>CHRIS JAGODA</h1>
-                    <p>
-                        Computer science graduate, web/software developer, tinkerer.
-                    </p>
+  <section class="wrapper">
+    <div class="content">
+      <header>
+        <div class="about">
+          <h2>THE THOUGHTS AND CODE OF</h2>
+          <h1>CHRIS JAGODA</h1>
+          <p>
+            Computer science graduate, software developer, tinkerer. 🍞🎸🎶
+          </p>
 
-                    <p class="links">
-                        <b style="display:block">Get in touch:</b>
-                        <a href="http://github.com/chrisjagoda">Github</a>,
-                        <a href="https://www.linkedin.com/in/chrisjagoda/">Linkedin</a>,
-                        <a href="mailto:chrisjagoda@gmail.com">Email</a> &amp;
-                        <a href="https://drive.google.com/file/d/1T5-YRqMPg5xRwtaZi1qn10reEpAtIh8_/view?usp=sharing" target="_blank">Resume</a>.
-                    </p>
+          <p class="links">
+            <b style="display:block">Get in touch:</b>
+            <a href="http://github.com/chrisjagoda">Github</a>,
+            <a href="https://www.linkedin.com/in/chrisjagoda/">Linkedin</a>,
+            <a href="mailto:chrisjagoda@gmail.com">Email</a> &amp;
+            <a href="https://drive.google.com/open?id=12zjFXYdVm-tpWogKbubGvJZhUSY-w3Ov" target="_blank">Resume</a>.
+          </p>
 
-                    <p class="filters">
-                        <b>Filters:</b>
-                        <br>
-                        <label for="serious-checkbox">Serious stuff</label>
-                        <input id="serious-checkbox" type="checkbox" checked data-type="serious">
-                        <br>
-                        <label for="fun-checkbox">Fun stuff</label>
-                        <input id="fun-checkbox" type="checkbox" checked data-type="fun">
-                        <br>
-                    </p>
-                </div>
-            </header>
-            
-            <article class="pinned serious">
-                <p style="text-align:center">
-                    Available for hire - full-time / contract / freelance
-                </p>
-            </article>
+          <p class="filters">
+            <b>Filters:</b>
+            <br>
+            <label for="serious-checkbox">Serious stuff</label>
+            <input id="serious-checkbox" type="checkbox" checked data-type="serious">
+            <br>
+            <label for="fun-checkbox">Fun stuff</label>
+            <input id="fun-checkbox" type="checkbox" checked data-type="fun">
+            <br>
+          </p>
+        </div>
+      </header>
+      
+      <article class="pinned serious">
+        <p style="text-align:center">
+          Available for hire - full-time / remote / contract
+        </p>
+      </article>
 
-            <article class="serious">
-                <h1>Interfaces - Java C#, TypeScript &amp; beyond</h1>
-                <p><em>Those of us who are programmers probably have some idea of what an interface does, but today I wanted to take a deep dive into a few a different languages' implementations of interfaces and find out the differences.</em></p>
-                <p>
-                  Generally an interface represents a contract between two entities - the first is the abstract data type that will implement the interface and the second being the interface whose properties and methods the object must implement.
-                </p>
-                <p>
-                  Interfaces generally work the same in Java and C#, where interfaces are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
-                </p>
-                <p>
-                  Java and C# do things a bit differently when it comes to interface properties however. In Java you may initialize a property inside of an interface which will be treated as final static, and access that property without implementing it in the class that implements it. In a C# interface variables cannot be initialized, the interface only lets a class know which properties it must implement.
-                </p>
-                <p>
-                  TypeScript interfaces are a different story, while they act and may be used similarly to C# interfaces in practice they can be used very differently. Normally an interface is used as a contract with a class, which implements its methods. In C#, Java, and TypeScript you may use an interface as a type for a class that implements that interface, as well as return and parameter type checking and generic constraints. You may not however initialize an instance of a interface… unless you’re programming in TypeScript.
-                </p>
-                <p>
-                  In typescript interfaces may be treated like a struct, something the language does not have. This treatment of interfaces allows a lot of possibilities in using them. While TypeScript has a type alias as well which can be used similarly, there are often advantages to using interfaces instead. Some of these are the ability to be used in an extends or implements clause and the ability to have multiple merged declarations, both a type alias cannot do.
-                </p>
-            </article>
+      <article class="fun" id="bread-01-21-2020">
+        <h1><a class="clean" href="https://codepen.io/thorgatron/pen/abbBQVZ" target="_blank">Bread 🍞</a></h1>
+        <label for="bread-01-21-2020">January 21, 2020</span>
+        <p><em>CSS bread.</em></p>
+        <p>
+          <div class="bread-box">
+            <div class="bread">
+              <div class="cuts">
+                <div class="cut"></div>
+                <div class="cut"></div>
+                <div class="cut"></div>
+              </div>
+              <div class="steam"></div>
+              <div class="steam"></div>
+              <div class="steam"></div>
+            </div>
+          </div>
+        </p>
+        <p>
+          I've been into baking bread for a while now so I made this codepen to try my hand at CSS animations and well... because I love bread.
+        </p>
+      </article>
 
-            <article class="fun">
-                <h1><a class="clean" href="posts/mandala.html">Conway's Game of Life Mandala Generator</a></h1>
-                <p><em>Continuing off of my post below of my colorful game life implementation I decided to adapt it into a mandala generator.</em></p>
-                <p>
-                    Taking a little inspiration from <a href="https://www.reddit.com/r/proceduralgeneration/comments/8igkyb/mandala_automata/" target="_">this</a> reddit post, I thought I'd try to adapt my game of life implementation into a mandala generator.
-                </p>
-                <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
-                <p style="text-align:center">
-                  <canvas id="mandala"></canvas>
-                </p>
-            </article>
+      <article class="serious" id="webextension-12-13-2019">
+        <h1>Cross Platform Web Extensions</h1>
+        <label for="webextension-12-13-2019">December 13, 2019</span>
+        <p><em>Thanks to Mozilla's <a href="https://github.com/mozilla/webextension-polyfill/" target="_blank">webextension-polyfill</a>, developing cross browser web extensions has never been easier.</em></p>
+        <p>
+          I developed a browser extension for Chrome a few ago back which integrates with Reddit to allow you to you to convert saved posts to browser bookmarks. It's gone through a few iterations over the years as I've learned and mustered the motivation to update it, with my most recent update adding cross browser support for Chrome and Firefox.
+        </p>
+        <p>
+          The extension itself is pretty simple. It uses cookie based authentication to login to your Reddit account and pulls your saved data, where you can then filter by subreddit, remove duplicates, and save them to a bookmark folder of your choice. With the webextension polyfill, I was able to deploy to the same extension code to both browsers.
+        </p>
+        <p>
+          The current iteration was built with Svelte. You can check out the chrome version <a href="https://chrome.google.com/webstore/detail/saved-to-bookmark-for-red/jldonmpmebcjhhkgceklimheebdnjkpf" target="_blank">here</a> and the firefox version <a href="https://addons.mozilla.org/en-US/firefox/addon/saved-to-bookmark-for-reddit/" target="_blank">here</a>. The code is hosted on Github.
+        </p>
+      </article>
 
-            <article class="fun">
-              <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life... with colors!</a></h1>
-              <p><em>For those unfamiliar with Conway's Game of Life, it is a zero-player "game" devised in 1970 by British mathematician John Conway.</em></p>
-              <p>
-                The game is carried out on a two-dimensional orthogonal grid of square "cells", each of which in one of two possible states, dead or alive. Each cell has eight neighbors which are the cells that are horizontally, vertically, and diagonally adjacent. At each step in time, the following rules decide the next generation:
-              </p>
-              <p>1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</p>
-              <p>2. Any live cell with two or three live neighbours lives on to the next generation.</p>
-              <p>3. Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
-              <p>4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
-              <p>
-                I added a twist to the game in is in the form of colors which are randomly assigned to each cell on the game's intialization. At each step any live cell is randomly assigned one of the colors from its live neighbors. Sort of like passing down traits from one generation to the next, with each new generation having equal chance to inherit the color from any one of its live neighbors' or 'parents''. Written in TypeScript.
-              </p>
-              <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
-              <p style="text-align:center">
-                <canvas id="base"></canvas>
-              </p>
-          </article>
-          <div class="under-padding"></div>
-    </section>
-    <script>
-        require(["bundle"], function(app) {});
-    </script>
-    <script type="text/javascript" src="index.js"></script>
+      <article class="serious" id="interfaces-06-15-2019">
+        <h1>Interfaces - Java C#, TypeScript &amp; beyond</h1>
+        <label for="interfaces-06-15-2019">June 15, 2019</span>
+        <p><em>Those of us who are programmers probably have some idea of what an interface does, but today I wanted to take a deep dive into a few a different languages' implementations of interfaces and find out the differences.</em></p>
+        <p>
+          Generally an interface represents a contract between two entities - the first is the abstract data type that will implement the interface and the second being the interface whose properties and methods the object must implement.
+        </p>
+        <p>
+          Interfaces generally work the same in Java and C#, where interfaces are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
+        </p>
+        <p>
+          Java and C# do things a bit differently when it comes to interface properties however. In Java you may initialize a property inside of an interface which will be treated as final static, and access that property without implementing it in the class that implements it. In a C# interface variables cannot be initialized, the interface only lets a class know which properties it must implement.
+        </p>
+        <p>
+          TypeScript interfaces are a different story, while they act and may be used similarly to C# interfaces in practice they can be used very differently. Normally an interface is used as a contract with a class, which implements its methods. In C#, Java, and TypeScript you may use an interface as a type for a class that implements that interface, as well as return and parameter type checking and generic constraints. You may not however initialize an instance of a interface… unless you’re programming in TypeScript.
+        </p>
+        <p>
+          In typescript interfaces may be treated like a struct, something the language does not have. This treatment of interfaces allows a lot of possibilities in using them. While TypeScript has a type alias as well which can be used similarly, there are often advantages to using interfaces instead. Some of these are the ability to be used in an extends or implements clause and the ability to have multiple merged declarations, both a type alias cannot do.
+        </p>
+      </article>
+
+      <article class="fun">
+        <h1><a class="clean" href="posts/mandala.html">Conway's Game of Life Mandala Generator</a></h1>
+        <label for="mandala-06-10-2019">June 10, 2019</span>
+        <p><em>Continuing off of my post below of my colorful game life implementation I decided to adapt it into a mandala generator.</em></p>
+        <p>
+          Taking a little inspiration from <a href="https://www.reddit.com/r/proceduralgeneration/comments/8igkyb/mandala_automata/" target="_">this</a> reddit post, I thought I'd try to adapt my game of life implementation into a mandala generator.
+        </p>
+        <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
+        <p style="text-align:center">
+          <canvas id="mandala"></canvas>
+        </p>
+      </article>
+
+      <article class="fun">
+        <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life... with colors!</a></h1>
+        <label for="game-of-life-05-15-2019">June 10, 2019</span>
+        <p><em>For those unfamiliar with Conway's Game of Life, it is a zero-player "game" devised in 1970 by British mathematician John Conway.</em></p>
+        <p>
+          The game is carried out on a two-dimensional orthogonal grid of square "cells", each of which in one of two possible states, dead or alive. Each cell has eight neighbors which are the cells that are horizontally, vertically, and diagonally adjacent. At each step in time, the following rules decide the next generation:
+        </p>
+        <p>1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.</p>
+        <p>2. Any live cell with two or three live neighbours lives on to the next generation.</p>
+        <p>3. Any live cell with more than three live neighbours dies, as if by overpopulation.</p>
+        <p>4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
+        <p>
+          I added a twist to the game in is in the form of colors which are randomly assigned to each cell on the game's intialization. At each step any live cell is randomly assigned one of the colors from its live neighbors. Sort of like passing down traits from one generation to the next, with each new generation having equal chance to inherit the color from any one of its live neighbors' or 'parents''. Written in TypeScript.
+        </p>
+        <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
+        <p style="text-align:center">
+          <canvas id="base"></canvas>
+        </p>
+      </article>
+    </div>
+    <div class="under-padding"></div>
+  </section>
+  <script>
+    require(["bundle"], function(app) {});
+  </script>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

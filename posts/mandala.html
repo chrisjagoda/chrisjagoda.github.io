@@ -1,58 +1,58 @@
 <!doctype html>
 <html>
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118994035-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-118994035-1');
-    </script>
-    <title>The Thoughts and Code of Chris Jagoda | Mandala</title>
-    <meta name="description" content="Welcome to my website, this is where you can see some of the stuff I've created, how I went about doing it, and other thoughts on software engineering &amp; programming.">
-    <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:900|IBM+Plex+Mono" rel="stylesheet">
-    <link href="../styles.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118994035-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-118994035-1');
+  </script>
+  <title>The Thoughts and Code of Chris Jagoda | Mandala</title>
+  <meta name="description" content="Welcome to my website, this is where you can see some of the stuff I've created, how I went about doing it, and other thoughts on software engineering &amp; programming.">
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:900|IBM+Plex+Mono" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 </head>
 <body>
-    <section class="wrapper">
-        <div class="content">
-            <header>
-                <div class="about">
-                    <h2>THE THOUGHTS AND CODE OF</h2>
-                    <h1>CHRIS JAGODA</h1>
-                    <p>
-                        Computer science student, web/software developer, tinkerer.
-                    </p>
+  <section class="wrapper">
+    <div class="content">
+      <header>
+        <div class="about">
+          <h2>THE THOUGHTS AND CODE OF</h2>
+          <h1>CHRIS JAGODA</h1>
+          <p>
+            Computer science graduate, software developer, tinkerer. 🍞🎸🎶
+          </p>
 
-                    <p class="links">
-                        <b style="display:block">Get in touch:</b>
-                        <a href="http://github.com/chrisjagoda">Github</a>,
-                        <a href="https://www.linkedin.com/in/chrisjagoda/">Linkedin</a>,
-                        <a href="mailto:chrisjagoda@gmail.com">Email</a> &amp;
-                        <a href="chrisjagoda_resume.pdf" target="_blank">Resume</a>.
-                    </p>
-                </div>
-            </header>
+          <p class="links">
+            <b style="display:block">Get in touch:</b>
+            <a href="http://github.com/chrisjagoda">Github</a>,
+            <a href="https://www.linkedin.com/in/chrisjagoda/">Linkedin</a>,
+            <a href="mailto:chrisjagoda@gmail.com">Email</a> &amp;
+            <a href="https://drive.google.com/open?id=12zjFXYdVm-tpWogKbubGvJZhUSY-w3Ov" target="_blank">Resume</a>.
+          </p>
+        </div>
+      </header>
 
-            <article class="fun">
-                <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life Mandala Generator</a></h1>
-                <p><em>Continuing off of my other post of my colorful game life implementation I decided to adapt it into a mandala generator.</em></p>
-                <p>
-                    Taking a little inspiration from <a href="https://www.reddit.com/r/proceduralgeneration/comments/8igkyb/mandala_automata/" target="_">this</a> reddit post, I thought I'd try to adapt my game of life implementation into a mandala generator.
-                </p>
-                <p style="text-align:center">
-                  <canvas id="life"></canvas>
-                </p>
-            </article>
+      <article class="fun">
+        <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">Conway's Game of Life Mandala Generator</a></h1>
+        <p><em>Continuing off of my other post of my colorful game life implementation I decided to adapt it into a mandala generator.</em></p>
+        <p>
+          Taking a little inspiration from <a href="https://www.reddit.com/r/proceduralgeneration/comments/8igkyb/mandala_automata/" target="_">this</a> reddit post, I thought I'd try to adapt my game of life implementation into a mandala generator.
+        </p>
+        <p style="text-align:center">
+          <canvas id="life"></canvas>
+        </p>
+      </article>
 
-          <div class="under-padding"></div>
-    </section>
-    <script>
-        require(["mandala"], function(app) {});
-    </script>
+      <div class="under-padding"></div>
+  </section>
+  <script>
+    require(["mandala"], function(app) {});
+  </script>
 </body>
 </html>

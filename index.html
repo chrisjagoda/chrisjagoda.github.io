@@ -101,16 +101,16 @@
           Generally an interface represents a contract between two entities - the first is the abstract data type that will implement the interface and the second being the interface whose properties and methods the object must implement.
         </p>
         <p>
-          Interfaces generally work the same in Java and C#, where interfaces are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
+          Interfaces generally work the same in Java and C#, where they are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
         </p>
         <p>
-          Java and C# do things a bit differently when it comes to interface properties however. In Java you may initialize a property inside of an interface which will be treated as final static, and access that property without implementing it in the class that implements it. In a C# interface variables cannot be initialized, the interface only lets a class know which properties it must implement.
+          Java and C# do things a bit differently when it comes to interface properties however. In Java you may initialize a property inside of an interface, which will be treated as final static, and access that property without implementing it in the class that implements it. In a C# interface, variables cannot be initialized, the interface only lets a class know which properties it must implement.
         </p>
         <p>
-          TypeScript interfaces are a different story, while they act and may be used similarly to C# interfaces in practice they can be used very differently. Normally an interface is used as a contract with a class, which implements its methods. In C#, Java, and TypeScript you may use an interface as a type for a class that implements that interface, as well as return and parameter type checking and generic constraints. You may not however initialize an instance of a interface… unless you’re programming in TypeScript.
+          TypeScript interfaces are a different story, while they act and may be used similarly to C# interfaces, in practice they can be used very differently. As stated above, normally an interface is used as a contract with a class which implements its methods. In C#, Java, and TypeScript you may use an interface as a type for a class that implements that interface, as well as return and parameter type checking and generic constraints. You may not however initialize an instance of a interface unless you’re programming in TypeScript.
         </p>
         <p>
-          In typescript interfaces may be treated like a struct, something the language does not have. This treatment of interfaces allows a lot of possibilities in using them. While TypeScript has a type alias as well which can be used similarly, there are often advantages to using interfaces instead. Some of these are the ability to be used in an extends or implements clause and the ability to have multiple merged declarations, both a type alias cannot do.
+          In TypeScript interfaces may be treated like a struct, something the language does not have. This treatment of interfaces allows a lot of possibilities in using them. While TypeScript has a type alias as well which can be used similarly, there are often advantages to using interfaces instead. Some of these are the ability to be used in an extends or implements clause and the ability to have multiple merged declarations, things a type alias cannot do.
         </p>
       </article>
 

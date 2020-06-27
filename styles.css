@@ -164,6 +164,11 @@ img {
   max-width: 100%;
 }
 
+.container {
+  box-shadow: 0 1px 4px rgba(220, 220, 220, 0.5);
+  border: 1px solid #DAE0E6;
+}
+
 .highlight {
   padding: 20px;
 }

@@ -2,11 +2,9 @@
     "name": "Personal-Site",
     "version": "1.0.0",
     "description": "Personal Site",
-    "dependencies": {
-        "http-server": "^0.8.0"
-    },
     "devDependencies": {
-        "typescript": "^2.8.0"
+        "typescript": "^2.8.0",
+        "http-server": "^0.8.0"
     },
     "scripts": {
         "tsc": "node node_modules/typescript/lib/tsc.js",

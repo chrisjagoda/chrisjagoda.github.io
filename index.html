@@ -85,6 +85,7 @@
         <p>
           I developed a browser extension for Chrome a few years ago which integrates with Reddit to allow you to you to convert saved posts to browser bookmarks. It's gone through a few iterations over the years as I've learned more with my most recent update adding cross browser support for Chrome and Firefox.
         </p>
+        <img class="container" src="images/saved-to-bookmark-for-reddit.png" alt="Saved to Bookmark for Reddit">
         <p>
           The extension itself is pretty simple. It uses cookie based authentication to login to your Reddit account and pulls your saved data, where you can then filter by subreddit, remove duplicates, and save them to a bookmark folder of your choice. With the webextension polyfill, I was able to deploy to the same extension code to both browsers.
         </p>
@@ -93,15 +94,15 @@
         </p>
       </article>
 
-      <article class="serious" id="interfaces-06-15-2019">
+      <article class="serious" id="interfaces-07-15-2018">
         <h1>Interfaces - Java C#, TypeScript &amp; beyond</h1>
-        <label for="interfaces-06-15-2019">June 15, 2019</span>
-        <p><em>Those of us who are programmers probably have some idea of what an interface does, but today I wanted to take a deep dive into a few a different languages' implementations of interfaces and find out the differences.</em></p>
+        <label for="interfaces-07-15-2018">July 15, 2018</span>
+        <p><em>Those of us familiar with object oriented programming probably have some idea of what an interface does, but there's some key differences between some languages' implementations that I wanted to dive into and find out the differences.</em></p>
         <p>
           Generally an interface represents a contract between two entities - the first is the abstract data type that will implement the interface and the second being the interface whose properties and methods the object must implement.
         </p>
         <p>
-          Interfaces generally work the same in Java and C#, where they are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
+          Interfaces mostly work the same in Java and C#, where they are used as a way to achieve polymorphism. A class or another interface may implement an interface and the implementer must then implement the the interface’s properties and methods as stated above.
         </p>
         <p>
           Java and C# do things a bit differently when it comes to interface properties however. In Java you may initialize a property inside of an interface, which will be treated as final static, and access that property without implementing it in the class that implements it. In a C# interface, variables cannot be initialized, the interface only lets a class know which properties it must implement.
@@ -114,22 +115,22 @@
         </p>
       </article>
 
-      <article class="fun">
+      <article class="fun" id="mandala-06-15-2018">
         <h1><a class="clean" href="posts/mandala.html">Conway's Game of Life Mandala Generator</a></h1>
-        <label for="mandala-06-10-2019">June 10, 2019</span>
+        <label for="mandala-06-15-2018">June 15, 2018</span>
         <p><em>Continuing off of my colorful game life implementation below I to adapted it into a mandala generator.</em></p>
         <p>
           Taking a little inspiration from <a href="https://www.reddit.com/r/proceduralgeneration/comments/8igkyb/mandala_automata/" target="_">this</a> reddit post, I thought I'd try to adapt my game of life implementation into a mandala generator.
         </p>
         <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
         <p style="text-align:center">
-          <canvas id="mandala"></canvas>
+          <canvas class="container" id="mandala"></canvas>
         </p>
       </article>
 
-      <article class="fun">
+      <article class="fun" id="game-of-life-06-10-2018">
         <h1><a class="clean" href="https://github.com/chrisjagoda/GameOfLife-Colors">A colorful Game of Life</a></h1>
-        <label for="game-of-life-05-15-2019">June 10, 2019</span>
+        <label for="game-of-life-06-10-2018">June 10, 2018</span>
         <p><em>For those unfamiliar with Conway's Game of Life, it is a zero-player "game" devised in 1970 by British mathematician John Conway.</em></p>
         <p>
           The game is carried out on a two-dimensional orthogonal grid of square "cells", each of which in one of two possible states, dead or alive. Each cell has eight neighbors which are the cells that are horizontally, vertically, and diagonally adjacent. At each step in time, the following rules decide the next generation:
@@ -143,7 +144,7 @@
         </p>
         <p style="text-align:center"><em>Tap to start &amp; stop, double tap to reset</em></p>
         <p style="text-align:center">
-          <canvas id="base"></canvas>
+          <canvas class="container" id="base"></canvas>
         </p>
       </article>
     </div>
